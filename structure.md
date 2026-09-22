@@ -1,0 +1,12 @@
+- index.html
+- handbook.html
+- /stylesheets
+- /javascripts
+- /pages
+  - articles.html
+  - tests.html
+  - dictionary.html
+  - /articles
+    - aloe.html
+    - orchidea.html
+  - /tests
