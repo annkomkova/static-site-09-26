@@ -5,13 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Главная</title>
   </head>
-  <body>
-    <h1>Главная</h1>
+  <body class="index">
+    <header class="header">
+      <a class="header__logo" href="#header">
+        <svg class="logo__icon" viewBox="0 0 200 200">
+          <g>
+            <ellipse cx="100" cy="52" rx="24" ry="46"></ellipse>
+            <ellipse
+              cx="100"
+              cy="52"
+              rx="24"
+              ry="46"
+              transform="rotate(72 100 100)"
+            ></ellipse>
+            <ellipse
+              cx="100"
+              cy="52"
+              rx="24"
+              ry="46"
+              transform="rotate(144 100 100)"
+            ></ellipse>
+            <ellipse
+              cx="100"
+              cy="52"
+              rx="24"
+              ry="46"
+              transform="rotate(216 100 100)"
+            ></ellipse>
+            <ellipse
+              cx="100"
+              cy="52"
+              rx="24"
+              ry="46"
+              transform="rotate(288 100 100)"
+            ></ellipse>
+          </g>
+        </svg>
+        <span class="logo__text">цветочный</span>
+      </a>
+
+      <nav class="header__nav">
+        <a class="nav__link" href="#about">О проекте</a>
+        <a class="nav__link" href="#articles">Статьи</a>
+        <a class="nav__link" href="#form">Форма</a>
+      </nav>
+    </header>
+
+    <!-- шпаргалка по роутингу -->
+    <!-- <h1>Главная</h1>
     <h2>Разделы</h2>
     <ul>
       <li><a href="pages/articles.html">Статьи</a></li>
       <li><a href="pages/dictionary.html">Словарь</a></li>
       <li><a href="pages/tests.html">Тесты</a></li>
-    </ul>
+    </ul> -->
+
+    <!-- подключение сборщика почт/тг -->
+    <!-- modify this form HTML and place wherever you want your form -->
+    <!-- <div data-fs-success>Thanks for your submission!</div>
+    <div data-fs-error>Oops! There was a problem submitting your form.</div>
+    <form id="my-form">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" data-fs-field />
+      <span data-fs-error="email"></span>
+      <label for="message">Message:</label>
+      <input type="text" id="message" name="message" data-fs-field />
+      <span data-fs-error="message"></span>
+      <button type="submit" data-fs-submit-btn>Submit</button>
+    </form> -->
+
+    <!-- Place these scripts at the end of the body tag -->
+    <!-- <script>
+      window.formspree =
+        window.formspree ||
+        function () {
+          ;(formspree.q = formspree.q || []).push(arguments)
+        }
+      formspree('initForm', {
+        formElement: '#my-form',
+        formId: 'xvkgdwde'
+      })
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    -->
   </body>
 </html>

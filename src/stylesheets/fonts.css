@@ -25,3 +25,23 @@
     url('../fonts/pt-root-ui_light.woff2');
   font-weight: 300;
 }
+@font-face {
+  font-family: 'Unbounded';
+  src: url('../fonts/unbounded-cyrillic.woff2') format('woff2');
+  font-weight: 200 900;
+}
+@font-face {
+  font-family: 'Unbounded';
+  src: url('../fonts/unbounded-latin.woff2') format('woff2');
+  font-weight: 200 900;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('../fonts/manrope-cyrillic.woff2') format('woff2');
+  font-weight: 200 800;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('../fonts/manrope-latin.woff2') format('woff2');
+  font-weight: 200 800;
+}
