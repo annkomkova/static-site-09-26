@@ -51,6 +51,92 @@
       </nav>
     </header>
 
+    <section class="hero section theme theme--light">
+      <p class="hero__eyebrow">учебный проект / Б25ДЗ09</p>
+
+      <h1 class="hero__title">
+        <span class="hero_line split split--chars">цветоч</span>
+        <span class="hero_line">
+          <span class="split split--chars">ный</span>
+          <span class="hero__flower">✿</span>
+        </span>
+      </h1>
+
+      <div class="hero__footer">
+        <p class="hero__text split split--words">
+          Медиа о домашних растениях и тех, кто их выращивает. Мы ещё поливаем
+          первые ростки — скоро здесь всё расцветёт
+        </p>
+
+        <a href="#form" class="badge hero__badge">
+          <svg class="badge__ring" viewBox="0 0 200 200">
+            <defs>
+              <path
+                id="badge-circle"
+                d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"
+              />
+            </defs>
+            <text class="badge__text">
+              <textPath href="#badge-circle">
+                скоро открытие ✿ скоро открытие ✿ скоро открытие ✿
+              </textPath>
+            </text>
+          </svg>
+
+          <span class="badge__center">✿</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="form section theme theme--pink" id="form">
+      <div class="section__head">
+        <p class="section__label reveal">На связи</p>
+        <p class="section__note reveal">без спама</p>
+      </div>
+
+      <div class="form__grid">
+        <div>
+          <h2 class="form__title">Оставайтесь на&nbsp;связи</h2>
+          <p class="form__text">
+            Напишите нам — пришлём письмо, как только откроемся, и поделимся
+            первыми материалами
+          </p>
+        </div>
+
+        <form id="my-form" class="form__wrapper reveal">
+          <div class="form__field">
+            <input
+              class="form__input"
+              type="text"
+              id="message"
+              name="message"
+              placeholder=""
+              data-fs-field
+            />
+            <label class="form__label" for="message">Как вас зовут</label>
+            <span data-fs-error="message"></span>
+          </div>
+
+          <div class="form__field">
+            <input
+              class="form__input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder=""
+              data-fs-field
+            />
+            <label class="form__label" for="email">Email</label>
+            <span data-fs-error="email"></span>
+          </div>
+
+          <button class="button form__button" type="submit" data-fs-submit-btn>
+            Отправить <span class="form__flower">❀</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
     <!-- шпаргалка по роутингу -->
     <!-- <h1>Главная</h1>
     <h2>Разделы</h2>
@@ -64,15 +150,7 @@
     <!-- modify this form HTML and place wherever you want your form -->
     <!-- <div data-fs-success>Thanks for your submission!</div>
     <div data-fs-error>Oops! There was a problem submitting your form.</div>
-    <form id="my-form">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" data-fs-field />
-      <span data-fs-error="email"></span>
-      <label for="message">Message:</label>
-      <input type="text" id="message" name="message" data-fs-field />
-      <span data-fs-error="message"></span>
-      <button type="submit" data-fs-submit-btn>Submit</button>
-    </form> -->
+    -->
 
     <!-- Place these scripts at the end of the body tag -->
     <!-- <script>
