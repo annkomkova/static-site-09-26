@@ -1,5 +1,6 @@
 splitText()
 showOnScroll()
+headerScroll()
 
 // разбиваем текст на буквы и слова
 function splitText() {
@@ -50,5 +51,29 @@ function checkElements() {
         element.classList.add('reveal--visible')
       }
     }
+  })
+}
+
+// показываем-скрываем верхнее меню во время скролла
+function headerScroll() {
+  const header = document.querySelector('.header')
+  let lastScroll = 0
+
+  window.addEventListener('scroll', () => {
+    let scroll = window.scrollY
+
+    if (scroll > 20) {
+      header.classList.add('header--scrolled')
+    } else {
+      header.classList.remove('header--scrolled')
+    }
+
+    if (scroll > 160 && scroll > lastScroll) {
+      header.classList.add('header--hidden')
+    } else {
+      header.classList.remove('header--hidden')
+    }
+
+    lastScroll = scroll
   })
 }
