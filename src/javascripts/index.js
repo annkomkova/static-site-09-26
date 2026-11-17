@@ -1,6 +1,7 @@
 splitText()
 showOnScroll()
 headerScroll()
+moveMarquee()
 
 // разбиваем текст на буквы и слова
 function splitText() {
@@ -76,4 +77,55 @@ function headerScroll() {
 
     lastScroll = scroll
   })
+}
+
+// анимация бегущих строк
+function moveMarquee() {
+  let marquee = document.querySelector('.marquee')
+  let rows = marquee.querySelectorAll('.marquee__row')
+  let position = 0,
+    direction = 1,
+    speed = 1,
+    timer
+  let lastScroll = window.scrollY
+
+  window.addEventListener('scroll', () => {
+    let delta = window.scrollY - lastScroll
+    lastScroll = window.scrollY
+
+    if (delta > 0) {
+      direction = 1
+    } else {
+      direction = -1
+    }
+
+    speed = Math.min(delta / 10, 4) + 1
+
+    let skew = Math.max(-8, delta * 0.9)
+    marquee.style.transform = `skewX(${skew}deg)`
+
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+      marquee.style.transform = `skewX(0deg)`
+      speed = 1
+    }, 150)
+  })
+
+  setInterval(() => {
+    position = position - 0.05 * speed * direction
+
+    if (position < -100) {
+      position = position + 100
+    }
+    if (position > 0) {
+      position = position - 100
+    }
+    rows.forEach((row) => {
+      let tracks = row.querySelectorAll('.marquee__track')
+
+      tracks.forEach((track) => {
+        track.style.transform = `translateX(${position}%)`
+      })
+    })
+  }, 16)
 }

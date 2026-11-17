@@ -423,3 +423,46 @@ h3 {
 .form__input:user-invalid {
   border-bottom-color: #b3261e;
 }
+
+/* бегущие строки */
+.marquee {
+  padding: clamp(30px, 4vw, 60px) 0;
+  overflow-x: hidden;
+  transition: transform 0.6s ease-out;
+}
+.marquee__row {
+  display: flex;
+  padding: clamp(12px, 1.4vw, 24px) 0;
+  background-color: var(--c-green);
+  color: var(--c-cream);
+  transform: rotate(-3deg);
+  width: 120%;
+  margin-left: -10%;
+}
+.marquee__row:nth-of-type(2) {
+  background-color: var(--c-pink);
+  color: var(--c-green);
+  transform: rotate(2deg);
+  position: relative;
+  z-index: -1;
+}
+.marquee__track {
+  display: flex;
+  align-items: center;
+  gap: 30rem;
+}
+.marquee__item,
+.marquee__flower {
+  font-size: clamp(24px, 3vw, 68px);
+  line-height: 1;
+  font-weight: 700;
+}
+.marquee__item:nth-of-type(1) {
+  margin-left: 30rem;
+}
+.marquee__flower {
+  color: var(--c-pink);
+}
+.marquee__row:nth-of-type(2) .marquee__flower {
+  color: var(--c-cream);
+}
