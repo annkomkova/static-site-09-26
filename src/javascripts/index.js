@@ -3,6 +3,7 @@ showOnScroll()
 headerScroll()
 moveMarquee()
 highlightWords()
+countNumbers()
 
 // разбиваем текст на буквы и слова
 function splitText() {
@@ -163,6 +164,41 @@ function highlightWords() {
         span.classList.add('about__word--active')
       } else {
         span.classList.remove('about__word--active')
+      }
+    })
+  })
+}
+
+// пролистываем числа от 0 до n
+function countNumbers() {
+  let numbers = document.querySelectorAll('.about__number')
+
+  numbers.forEach((number) => {
+    let target = parseInt(number.innerText)
+    let started = false
+
+    number.innerText = 0
+
+    window.addEventListener('scroll', () => {
+      let rect = number.getBoundingClientRect()
+
+      if (rect.top < window.innerHeight * 0.8 && !started) {
+        started = true
+
+        let current = 0
+        let step = Math.ceil(target / 60)
+
+        let interval = setInterval(() => {
+          current = current + step
+
+          if (current >= target) {
+            current = target
+
+            clearInterval(interval)
+          }
+
+          number.innerText = current
+        }, 50)
       }
     })
   })
