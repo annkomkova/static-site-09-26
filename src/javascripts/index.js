@@ -5,6 +5,7 @@ moveMarquee()
 highlightWords()
 countNumbers()
 move3dCard()
+showPreview()
 
 // разбиваем текст на буквы и слова
 function splitText() {
@@ -220,5 +221,26 @@ function move3dCard() {
 
   link.addEventListener('mouseleave', () => {
     media.style.transform = ''
+  })
+}
+
+// анимация курсора-блоба по навереднию курсора на пункт списка
+function showPreview() {
+  let preview = document.querySelector('.preview')
+  let items = document.querySelectorAll('.soon__item')
+  let colors = ['pink', 'lime', 'liliac', 'peach']
+
+  document.addEventListener('mousemove', (event) => {
+    preview.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`
+  })
+
+  items.forEach((item, i) => {
+    item.addEventListener('mouseenter', () => {
+      preview.className = `preview preview--active preview--${colors[i]}`
+    })
+
+    item.addEventListener('mouseleave', () => {
+      preview.classList.remove('preview--active')
+    })
   })
 }

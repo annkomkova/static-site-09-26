@@ -603,3 +603,104 @@ h3 {
 .card__link:hover .card__arrow {
   transform: translateX(20rem);
 }
+.soon {
+  margin-top: clamp(64px, 9vw, 140px);
+  position: relative;
+}
+.soon__item {
+  display: grid;
+  grid-template-columns: 80rem 1fr auto;
+  align-self: center;
+  gap: var(--gap);
+  border-top: 1px solid var(--c-green);
+  padding: clamp(24px, 3vw, 44px);
+}
+.soon__item:last-child {
+  border-bottom: 1px solid var(--c-green);
+}
+.soon__index {
+  font-size: 14rem;
+  font-weight: 700;
+}
+.soon__title {
+  font-family: 'Unbounded', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: clamp(20px, 2.6vw, 42px);
+  line-height: 1.1;
+  opacity: 0.5;
+  filter: blur(2px);
+  transition:
+    transform 0.6s ease-out,
+    opacity 0.6s ease;
+}
+.soon__item:hover .soon__title {
+  filter: none;
+  opacity: 1;
+  transform: translateX(20rem);
+}
+.soon__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10rem;
+  padding: 2rem 26rem;
+  border: 1px solid var(--c-green);
+  border-radius: 40rem;
+  font-weight: 500;
+  line-height: 1;
+}
+.soon__status::before {
+  content: '';
+  width: 8rem;
+  height: 8rem;
+  border-radius: 100%;
+  background-color: var(--c-pink);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+.preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  width: clamp(150px, 18vw, 250px);
+  aspect-ratio: 1 / 1;
+  pointer-events: none;
+  transition: transform 0.3s ease-out;
+
+  --c-preview: var(--c-pink);
+}
+.preview--liliac {
+  --c-preview: var(--c-liliac);
+}
+.preview--lime {
+  --c-preview: var(--c-lime);
+}
+.preview--peach {
+  --c-preview: var(--c-peach);
+}
+.preview__blob {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0) rotate(-90deg);
+  transition: transform 0.6s ease-out;
+}
+.preview__path {
+  fill: var(--c-preview);
+  transition: fill 0.6s ease;
+}
+.preview__emoji {
+  font-size: clamp(56px, 6vw, 96px);
+  color: var(--c-green);
+  transition: transform 0.6s ease-out;
+  transform: scale(0);
+}
+.preview--active .preview__emoji {
+  animation: rotate 8s infinite linear;
+  transform: scale(1);
+}
+.preview--active .preview__blob {
+  transform: scale(1) rotate(0);
+}

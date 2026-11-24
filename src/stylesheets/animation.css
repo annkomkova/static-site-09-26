@@ -6,3 +6,9 @@
     transform: rotate(360deg);
   }
 }
+@keyframes pulse {
+  50% {
+    transform: scale(1.6);
+    opacity: 0.4;
+  }
+}
