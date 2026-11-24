@@ -785,3 +785,47 @@ h3 {
   background-color: var(--c-green);
   color: var(--c-cream);
 }
+/* курсор */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+  pointer-events: none;
+  transition: transform 0.15s ease-out;
+}
+.cursor__circle {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background-color: #fff;
+  mix-blend-mode: difference;
+  transition: transform 0.45s ease-out;
+}
+.cursor__label {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: var(--c-green);
+  font-size: 13rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.4);
+  transition: transform 0.45s ease-out;
+}
+.cursor--hover .cursor__circle {
+  background-color: var(--c-pink);
+  mix-blend-mode: normal;
+  transition: scale(6);
+}
+.cursor--hover .cursor__label {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.cursor__hidden .cursor__circle {
+  opacity: 0;
+}

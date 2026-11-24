@@ -7,6 +7,7 @@ countNumbers()
 move3dCard()
 showPreview()
 changeTheme()
+moveCursor()
 
 // разбиваем текст на буквы и слова
 function splitText() {
@@ -275,4 +276,36 @@ function changeTheme() {
       }
     })
   })
+}
+
+function moveCursor() {
+  let cursor = document.querySelector('.cursor')
+  let label = document.querySelector('.cursor__label')
+  let links = document.querySelectorAll('a, button')
+
+  links.forEach((link) => {
+    link.addEventListener('mouseover', () => {
+      cursor.classList.add('cursor--hover')
+    })
+    link.addEventListener('mouseout', () => {
+      cursor.classList.remove('cursor--hover')
+    })
+  })
+
+  addCursorLabel('.card__link', 'Читать')
+  addCursorLabel('.soon__iten', 'Скоро')
+
+  function addCursorLabel(selector, text) {
+    let elements = document.querySelectorAll(selector)
+
+    elements.forEach((element) => {
+      element.addEventListener('mouseover', () => {
+        // cursor.classList.add('cursor--label')
+        label.innerText = text
+      })
+      element.addEventListener('mouseout', () => {
+        // cursor.classList.remove('cursor--label')
+      })
+    })
+  }
 }
