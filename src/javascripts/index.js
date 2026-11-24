@@ -4,6 +4,7 @@ headerScroll()
 moveMarquee()
 highlightWords()
 countNumbers()
+move3dCard()
 
 // разбиваем текст на буквы и слова
 function splitText() {
@@ -201,5 +202,23 @@ function countNumbers() {
         }, 50)
       }
     })
+  })
+}
+
+//наклон обложки статьи по наведению курсора
+function move3dCard() {
+  let link = document.querySelector('.card__link')
+  let media = link.querySelector('.card__media')
+
+  link.addEventListener('mousemove', (event) => {
+    let rect = media.getBoundingClientRect()
+    let x = (event.clientX - rect.left) / rect.width - 0.5
+    let y = (event.clientY - rect.top) / rect.height - 0.5
+
+    media.style.transform = `perspective(1000px) rotateX(${x * 10}deg) rotateY(${-y * 10}deg)`
+  })
+
+  link.addEventListener('mouseleave', () => {
+    media.style.transform = ''
   })
 }

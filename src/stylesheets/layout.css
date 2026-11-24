@@ -517,3 +517,89 @@ h3 {
   font-size: 24rem;
   font-weight: 600;
 }
+
+/* статьи */
+.articles__title {
+  margin-bottom: clamp(48px, 7vw, 112px);
+  font-weight: 800;
+  font-family: 'Unbounded', Arial, Helvetica, sans-serif;
+  font-size: clamp(40px, 7vw, 120px);
+  line-height: 1;
+}
+.card__link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  gap: var(--gap);
+  justify-content: space-between;
+  align-items: center;
+}
+.card__media {
+  position: relative;
+  width: 50%;
+  border-radius: var(--radius);
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+}
+.card__art {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, var(--c-pink), var(--c-liliac)),
+    radial-gradient(circle at 20% 20%, var(--c-lime) 0 18%, transparent 40%),
+    radial-gradient(circle at 85% 90%, var(--c-peach) 0 18%, transparent 50%);
+}
+.card__flower {
+  position: absolute;
+  transition: transform 1.2s ease-out;
+}
+.card__flower--one {
+  width: 46%;
+  top: 14%;
+  left: 18%;
+}
+.card__flower--two {
+  width: 30%;
+  bottom: 12%;
+  right: 16%;
+}
+.card__flower--one .flower__petals {
+  fill: var(--c-peach);
+}
+.card__flower--two .flower__petals {
+  fill: var(--c-cream);
+}
+.card__flower--one .flower__center {
+  fill: var(--c-liliac);
+}
+.card__flower--two .flower__center {
+  fill: var(--c-peach);
+}
+.card__link:hover .card__flower--one {
+  transform: rotate(120deg);
+}
+.card__link:hover .card__flower--two {
+  transform: rotate(-135deg);
+}
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.card__title {
+  font-size: clamp(26px, 3vw, 48px);
+  font-weight: 600;
+  font-family: 'Unbounded', Arial, Helvetica, sans-serif;
+}
+.card__more {
+  font-weight: 600;
+  color: var(--c-pink);
+  font-family: 'Unbounded', Arial, Helvetica, sans-serif;
+}
+.card__arrow {
+  transition: transform 1s ease-out;
+  display: inline-block;
+}
+.card__link:hover .card__arrow {
+  transform: translateX(20rem);
+}
