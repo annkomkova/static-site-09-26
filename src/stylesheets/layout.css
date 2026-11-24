@@ -28,6 +28,18 @@ h3 {
   --gap: clamp(16px, 4vw, 56px);
   --radius: clamp(16px, 2vw, 28px);
 }
+.page--light {
+  --bg: var(--c-cream);
+  --main: var(--c-green);
+}
+.page--dark {
+  --bg: var(--c-green);
+  --main: var(--c-cream);
+}
+.page--pink {
+  --bg: var(--c-pink);
+  --main: var(--c-green);
+}
 
 /* стили для статьи */
 .article-header,
@@ -130,10 +142,12 @@ h3 {
 
 /* стили для заглушки (index) */
 .index {
-  background-color: var(--c-cream);
-  color: var(--c-green);
+  background-color: var(--bg);
+  color: var(--main);
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
   line-height: 1.5;
+  transition: background-color 0.8s ease-out;
+  overflow-x: hidden;
 }
 .section {
   position: relative;
@@ -144,7 +158,7 @@ h3 {
   justify-content: space-between;
   padding-bottom: 20rem;
   margin-bottom: 60rem;
-  border-bottom: 1px solid var(--c-green);
+  border-bottom: 1px solid var(--main);
   font-size: 14rem;
   text-transform: uppercase;
   font-weight: 700;
@@ -350,9 +364,7 @@ h3 {
 }
 
 /* секция form */
-.theme--pink {
-  background-color: var(--c-pink-soft);
-}
+
 .form__grid {
   display: flex;
   gap: clamp(48px, 7vw, 120px);
@@ -480,6 +492,7 @@ h3 {
   transition:
     opacity 0.6s ease,
     color 0.6s;
+  color: var(--c-pink);
 }
 .about__word--active {
   opacity: 1;
@@ -498,7 +511,7 @@ h3 {
   flex-direction: column;
   gap: 12px;
   width: 30%;
-  border: 1px solid var(--c-green);
+  border: 1px solid var(--main);
   padding: clamp(24px, 2.4vw, 40px);
   border-radius: var(--radius);
   transition:
@@ -709,6 +722,7 @@ h3 {
 }
 .footer {
   padding: clamp(64px, 8vw, 120px) var(--gap);
+  border-top: 1px solid var(--main);
 }
 .footer__top {
   display: grid;

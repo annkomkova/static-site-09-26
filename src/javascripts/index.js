@@ -6,6 +6,7 @@ highlightWords()
 countNumbers()
 move3dCard()
 showPreview()
+changeTheme()
 
 // разбиваем текст на буквы и слова
 function splitText() {
@@ -241,6 +242,37 @@ function showPreview() {
 
     item.addEventListener('mouseleave', () => {
       preview.classList.remove('preview--active')
+    })
+  })
+}
+
+// меняем цвет страницы по скроллу в зависимости от секции
+function changeTheme() {
+  let sections = document.querySelectorAll('.theme')
+
+  window.addEventListener('scroll', () => {
+    let middle = window.innerHeight / 2
+
+    sections.forEach((section) => {
+      let rect = section.getBoundingClientRect()
+
+      if (rect.top < middle && rect.bottom > middle) {
+        document.body.classList.remove(
+          'page--light',
+          'page--dark',
+          'page--pink'
+        )
+
+        if (section.classList.contains('theme--light')) {
+          document.body.classList.add('page--light')
+        }
+        if (section.classList.contains('theme--dark')) {
+          document.body.classList.add('page--dark')
+        }
+        if (section.classList.contains('theme--pink')) {
+          document.body.classList.add('page--pink')
+        }
+      }
     })
   })
 }
